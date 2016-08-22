@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+cat << EOF
+addons: []
+config_vars: []
+default_process_types:
+  web: unzip -o jenkins.zip && chmod +x scripts/*.py && scripts/init.py && java -jar war/jenkins.war --httpPort=\$PORT & echo 'hello'
+EOF
