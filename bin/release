@@ -4,5 +4,5 @@ cat << EOF
 addons: []
 config_vars: []
 default_process_types:
-  web: unzip -o jenkins.zip && chmod +x scripts/init.sh && scripts/init.sh && java -jar war/jenkins-*.war --httpPort=\$PORT
+  web: unzip -o jenkins.zip && chmod +x scripts/init.sh && scripts/init.sh && java -jar war/jenkins-*.war -DJENKINS_HOME=$JENKINS_HOME --httpPort=\$PORT
 EOF
